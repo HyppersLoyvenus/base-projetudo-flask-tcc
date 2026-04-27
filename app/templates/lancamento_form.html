@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento Financeiro</title>
+</head>
+<body>
+    <h1>Registrar Lançamento Financeiro</h1>
+
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <div>
+            {{ form.produto.label }}
+            {{ form.produto() }}
+        </div>
+
+        <div>
+            {{ form.fornecedor.label }}
+            {{ form.fornecedor() }}
+        </div>
+
+        <div>
+            {{ form.tipo_custo.label }}
+            {{ form.tipo_custo() }}
+        </div>
+
+        <div>
+            {{ form.conta_origem.label }}
+            {{ form.conta_origem() }}
+        </div>
+
+        <div>
+            {{ form.forma_pagamento.label }}
+            {{ form.forma_pagamento() }}
+        </div>
+
+        <div>
+            {{ form.status.label }}
+            {{ form.status() }}
+        </div>
+
+        <div>
+            {{ form.valor.label }}
+            {{ form.valor(placeholder="Ex: 803.53") }}
+        </div>
+
+        <div>
+            {{ form.btnSubmit() }}
+        </div>
+    </form>
+
+    <br>
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('listar_lancamento') }}">Lançamentos</a>
+</body>
+</html>
